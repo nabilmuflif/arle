@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Sweet Letter for Arle</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh; display: flex;
+            justify-content: center; align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .container {
+            width: 100%; max-width: 420px; background: #f5f5f5;
+            padding: 45px 35px; border-radius: 20px; text-align: center;
+            position: relative; z-index: 10;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            animation: gentleFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        .letter-content {
+            background: white; padding: 35px; border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative; z-index: 10;
+        }
+        
+        .letter-title {
+            font-family: 'Dancing Script', cursive; font-size: 28px;
+            color: #4A90E2; margin-bottom: 15px;
+            animation: titlePulse 3s ease-in-out infinite;
+        }
+
+        @keyframes titlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        
+        .letter-text {
+            font-family: 'Dancing Script', cursive; font-size: 17px;
+            line-height: 1.7; color: #666; text-align: left;
+            border-left: 3px solid #4A90E2; padding-left: 18px;
+        }
+        
+        .letter-signature {
+            font-family: 'Dancing Script', cursive; font-size: 17px;
+            color: #666; text-align: right; margin-top: 25px;
+            padding-right: 18px;
+        }
+
+        .falling-effects {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100vh;
+            pointer-events: none; z-index: 1;
+            overflow: hidden;
+        }
+
+        .heart, .star, .cute {
+            position: absolute;
+            font-size: 20px;
+            animation: fall linear infinite;
+            opacity: 0.8;
+        }
+
+        .heart {
+            color: #4A90E2;
+        }
+
+        .star {
+            color: #FFD700;
+            font-size: 18px;
+        }
+
+        .cute {
+            color: #FF69B4;
+            font-size: 16px;
+        }
+
+        @keyframes fall {
+            from {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .heart:nth-child(1) { left: 10%; animation-duration: 4s; }
+        .heart:nth-child(2) { left: 20%; animation-duration: 5s; }
+        .heart:nth-child(3) { left: 30%; animation-duration: 4.5s; }
+        .heart:nth-child(4) { left: 40%; animation-duration: 5.5s; }
+        .heart:nth-child(5) { left: 50%; animation-duration: 4.2s; }
+        .heart:nth-child(6) { left: 60%; animation-duration: 5.2s; }
+        .heart:nth-child(7) { left: 70%; animation-duration: 4.8s; }
+        .heart:nth-child(8) { left: 80%; animation-duration: 5.8s; }
+        .heart:nth-child(9) { left: 90%; animation-duration: 4.3s; }
+        .heart:nth-child(10) { left: 5%; animation-duration: 5.3s; }
+
+        .star:nth-child(11) { left: 15%; animation-duration: 6s; }
+        .star:nth-child(12) { left: 25%; animation-duration: 5.7s; }
+        .star:nth-child(13) { left: 35%; animation-duration: 6.2s; }
+        .star:nth-child(14) { left: 45%; animation-duration: 5.4s; }
+        .star:nth-child(15) { left: 55%; animation-duration: 6.5s; }
+
+        .cute:nth-child(16) { left: 12%; animation-duration: 7s; }
+        .cute:nth-child(17) { left: 32%; animation-duration: 6.8s; }
+        .cute:nth-child(18) { left: 52%; animation-duration: 7.2s; }
+        .cute:nth-child(19) { left: 72%; animation-duration: 6.6s; }
+        .cute:nth-child(20) { left: 92%; animation-duration: 7.5s; }
+    </style>
+</head>
+<body>
+    <div class="falling-effects">
+        <div class="heart">💙</div>
+        <div class="heart">💙</div>
+        <div class="heart">💙</div>
+        <div class="heart">💙</div>
+        <div class="heart">💙</div>
+        <div class="heart">💙</div>
+        <div class="heart">💙</div>
+        <div class="heart">💙</div>
+        <div class="heart">💙</div>
+        <div class="heart">💙</div>
+        <div class="star">⭐</div>
+        <div class="star">⭐</div>
+        <div class="star">⭐</div>
+        <div class="star">⭐</div>
+        <div class="star">⭐</div>
+        <div class="cute">🌸</div>
+        <div class="cute">🦋</div>
+        <div class="cute">🌙</div>
+        <div class="cute">🌺</div>
+        <div class="cute">💫</div>
+    </div>
+
+    <div class="container">
+        <div class="letter-content">
+            <div class="letter-title">my precious arle ♡</div>
+            <div class="letter-text">
+To Arle, the person I cherish most in my world 💙<br><br>
+
+I just want to say thank you for being the most important part of my life. Every day with you feels like the best day ever. You're the reason I smile and laugh so freely, and honestly, you're the absolute cutest person I've ever met.<br><br>
+
+I love everything about you: the way we laugh together, how you get excited over the smallest things, and how you make my world so much brighter just by being yourself.<br><br>
+
+Long story short, I love you more than words can say, Le. You deserve all the happiness in the universe, and I promise I'll always be here to be a reason for that happiness. I love you! ✨
+            </div>
+            <div class="letter-signature">
+                with all my love and giggles,<br>
+                💙 your silly gf who adores you ~
+            </div>
+        </div>
+    </div>
+</body>
+</html>

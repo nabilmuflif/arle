@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada Sesuatu Untukmu</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 50%, #f0f4f8 100%);
+            background-size: 400% 400%;
+            animation: softGradient 10s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            position: relative;
+            overflow: hidden; /* Changed from overflow-x: hidden */
+        }
+        @keyframes softGradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Floating hearts - MODIFIED */
+        .heart {
+            position: absolute;
+            color: rgba(74, 144, 226, 0.6);
+            font-size: 16px;
+            pointer-events: none;
+            animation: heartFloat linear infinite;
+        }
+
+        /* MODIFIED KEYFRAMES for immediate appearance */
+        @keyframes heartFloat {
+            from {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1; /* Start visible */
+            }
+            to {
+                transform: translateY(-10vh) rotate(180deg); /* End above viewport */
+                opacity: 0;
+            }
+        }
+        
+        /* MODIFIED DELAYS to be negative, making them appear instantly */
+        .heart:nth-child(1) { left: 15%; animation-duration: 8s; animation-delay: -2s; }
+        .heart:nth-child(2) { left: 35%; animation-duration: 10s; animation-delay: -5s; }
+        .heart:nth-child(3) { left: 55%; animation-duration: 9s; animation-delay: -1s; }
+        .heart:nth-child(4) { left: 75%; animation-duration: 11s; animation-delay: -7s; }
+        .heart:nth-child(5) { left: 85%; animation-duration: 7s; animation-delay: -4s; }
+
+        .main-container {
+            position: relative;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 50px 40px;
+            border-radius: 25px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: containerPulse 4s ease-in-out infinite;
+        }
+        @keyframes containerPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        .gif-container {
+            position: relative;
+            margin-bottom: 25px;
+        }
+        .gif-container img {
+            max-width: 90%;
+            width: 250px;
+            height: auto;
+            border-radius: 20px;
+            filter: drop-shadow(0 10px 20px rgba(74, 144, 226, 0.3));
+            animation: gifBounce 3s ease-in-out infinite;
+        }
+        @keyframes gifBounce {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-10px) scale(1.03); }
+        }
+        /* Sparkle effect around GIF */
+        .sparkle {
+            position: absolute;
+            color: #FFD700;
+            font-size: 12px;
+            animation: sparkleEffect 2s ease-in-out infinite;
+        }
+        .sparkle:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .sparkle:nth-child(2) { top: 20%; right: 15%; animation-delay: 0.5s; }
+        .sparkle:nth-child(3) { bottom: 15%; left: 20%; animation-delay: 1s; }
+        .sparkle:nth-child(4) { bottom: 25%; right: 10%; animation-delay: 1.5s; }
+        @keyframes sparkleEffect {
+            0%, 100% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .knock-text {
+            font-size: 18px;
+            background: linear-gradient(45deg, #4A90E2, #357ABD);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            animation: textSway 3s ease-in-out infinite;
+        }
+        @keyframes textSway {
+            0%, 100% { transform: translateX(0px); }
+            25% { transform: translateX(-2px); }
+            75% { transform: translateX(2px); }
+        }
+
+        .open-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #4A90E2, #357ABD);
+            color: white;
+            border: none;
+            padding: 18px 45px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 25px rgba(74, 144, 226, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        .open-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s;
+        }
+        .open-btn:hover::before {
+            left: 100%;
+        }
+
+        .open-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(74, 144, 226, 0.6);
+        }
+        .open-btn:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+    </style>
+</head>
+<body>
+    <div class="heart">💙</div>
+    <div class="heart">💙</div>
+    <div class="heart">💙</div>
+    <div class="heart">💙</div>
+    <div class="heart">💙</div>
+    <div class="main-container">
+        <div class="gif-container">
+            <div class="sparkle">✨</div>
+            <div class="sparkle">✨</div>
+            <div class="sparkle">✨</div>
+            <div class="sparkle">✨</div>
+            <img src="gif2.gif" alt="Animasi GIF">
+        </div>
+        <div class="knock-text">knock knock .. buka aku! ꉂ(˵˃ ᗜ ˂˵)</div>
+        <a href="surat.html" class="open-btn">Buka &lt;3</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fbff 50%, #ffffff 100%);
+            background-size: 400% 400%;
+            animation: subtleGradient 8s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            position: relative;
+            overflow: hidden; /* Changed from overflow-x: hidden */
+        }
+        @keyframes subtleGradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Floating particles - MODIFIED */
+        .particle {
+            position: absolute;
+            pointer-events: none;
+            animation: floatUp linear infinite;
+        }
+
+        /* MODIFIED KEYFRAMES for immediate appearance */
+        @keyframes floatUp {
+            from {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1; /* Start visible */
+            }
+            to {
+                transform: translateY(-10vh) rotate(360deg); /* End above viewport */
+                opacity: 0;
+            }
+        }
+        
+        /* MODIFIED DELAYS to be negative, making them appear instantly */
+        .particle:nth-child(1) { left: 10%; animation-duration: 8s; animation-delay: -3s; font-size: 20px; }
+        .particle:nth-child(2) { left: 20%; animation-duration: 10s; animation-delay: -1s; font-size: 16px; }
+        .particle:nth-child(3) { left: 30%; animation-duration: 12s; animation-delay: -9s; font-size: 18px; }
+        .particle:nth-child(4) { left: 70%; animation-duration: 9s; animation-delay: -5s; font-size: 22px; }
+        .particle:nth-child(5) { left: 80%; animation-duration: 11s; animation-delay: -2s; font-size: 17px; }
+        .particle:nth-child(6) { left: 90%; animation-duration: 10s; animation-delay: -6s; font-size: 19px; }
+
+        .main-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: gentleBounce 3s ease-in-out infinite;
+        }
+        @keyframes gentleBounce {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        .gif-container {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .gif-container img {
+            width: 120px;
+            height: auto;
+            border-radius: 15px;
+            filter: drop-shadow(0 8px 16px rgba(74, 144, 226, 0.2));
+            animation: imageFloat 4s ease-in-out infinite;
+        }
+        @keyframes imageFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(1deg); }
+        }
+
+        .birthday-message {
+            font-size: 28px;
+            font-weight: 600;
+            background: linear-gradient(45deg, #4A90E2, #357ABD);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            text-align: center;
+            animation: textPulse 2s ease-in-out infinite;
+        }
+        @keyframes textPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+
+        .birthday-emoticon {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 20px;
+            text-align: center;
+            animation: wiggle 2s ease-in-out infinite;
+        }
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-2deg); }
+            75% { transform: rotate(2deg); }
+        }
+
+        .next-btn {
+            display: inline-block;
+            margin-top: 20px;
+            background: linear-gradient(45deg, #4A90E2, #357ABD);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(74, 144, 226, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        .next-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        .next-btn:hover::before {
+            left: 100%;
+        }
+        .next-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(74, 144, 226, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="particle">🎉</div>
+    <div class="particle">🎈</div>
+    <div class="particle">⭐</div>
+    <div class="particle">🎂</div>
+    <div class="particle">💙</div>
+    <div class="particle">✨</div>
+    <div class="main-content">
+        <div class="gif-container">
+            <img src="gif1.gif" alt="Gambar Ulang Tahun">
+        </div>
+        <div class="birthday-message">u did so well sayangkuu!</div>
+        <div class="birthday-emoticon">ᕙ( ͡° ͜ʖ ͡°)ᕗ ♡</div>
+        <a href="amplop.html" class="next-btn">go get ur gift!!!</a>
+    </div>
+</body>
+</html>
